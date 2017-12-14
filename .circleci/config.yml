@@ -10,7 +10,7 @@ jobs:
           command: apt-get update
       - run:
           name: Hotfix to container
-          command: apt-get install -y ca-certificates
+          command: apt-get install -y ca-certificates curl gcc c++ sudo tar libgcc git g++ gnupg libstdc++ linux-headers make mercurial paxctl python subversion shadow
       - checkout
       - run:
           name: Install NodeJS
