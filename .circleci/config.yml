@@ -26,6 +26,7 @@ jobs:
           command: |
             npm install syntax-checker -g
             npm install uglifyjs -g
+            npm install yargs
       - run:
           name: Test Files
           command: syntax-checker ~/dorm_elect
