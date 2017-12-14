@@ -1,7 +1,0 @@
-machine:
-  timezone: Asia/Bangkok
-  php:
-    version: 5.6.18
-test:
-  pre:
-    - sudo ./check_syntax.sh
