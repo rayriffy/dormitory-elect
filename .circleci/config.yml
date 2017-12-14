@@ -10,7 +10,7 @@ jobs:
           command: apt-get update
       - run:
           name: Hotfix to container
-          command: apt-get install -y ca-certificates curl
+          command: apt-get install -y ca-certificates curl sudo
       - checkout
       - run:
           name: Install NodeJS
