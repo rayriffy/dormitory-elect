@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/rayriffy/dormitory-elect.svg?style=svg)](https://circleci.com/gh/rayriffy/dormitory-elect)
+
 # Dormitory Election
 MWITS DSC Election System
 
