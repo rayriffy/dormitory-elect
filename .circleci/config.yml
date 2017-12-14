@@ -13,7 +13,7 @@ jobs:
           command: apt-get install -y ca-certificates curl sudo gnupg gnupg2 gnupg1
       - run:
           name: Install Required complier
-          command: apt-get install -y uglifyjs php php-common php-cli php-json php-mysql php-ldap php-xml
+          command: apt-get install -y uglifyjs php php-common php-cli php-json php-mysql php-ldap php-xml zip unzip git
       - checkout
       - run:
           name: Install NodeJS
