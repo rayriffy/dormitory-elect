@@ -7,13 +7,23 @@ jobs:
     steps:
       - run:
           name: Update Container
-          command: apt-get update
+          command: apt-get update -y
       - run:
           name: Hotfix to container
           command: apt-get install -y ca-certificates curl sudo gnupg gnupg2 gnupg1
       - run:
           name: Install Required complier
-          command: apt-get install -y uglifyjs php php-common php-cli php-json php-mysql php-ldap php-xml zip unzip git
+          command: apt-get install -y uglifyjs zip unzip git
+      - run:
+          name: Install PHP 5.6
+          command: |
+            add-apt-repository ppa:ondrej
+            apt-get install -y software-properties-common
+            apt-get update -y
+            apt-get install -y php5.6 php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-cli php5.6-common php5.6-ldap php5.6-cli
+      - run:
+          name: Check PHP version
+          command: php -v
       - checkout
       - run:
           name: Install NodeJS
@@ -34,7 +44,7 @@ jobs:
             php composer.phar require --dev jakub-onderka/php-parallel-lint
             php composer.phar require --dev jakub-onderka/php-console-highlighter
       - run:
-          name: Test
-          command: ./bin/parallel-lint .
+          name: Test Files
+          command: ./vendor/bin/parallel-lint .
       - store_artifacts:
           path: /root/dorm_elect
