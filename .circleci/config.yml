@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/dorm_elect
     docker:
-      - image: centos:centos7
+      - image: centos:centos7.4.1708
     steps:
       - run:
           name: Update Container
@@ -16,7 +16,7 @@ jobs:
           command: yum install -y uglifyjs zip unzip git epel-release wget tar gcc gcc+ make
       - run:
           name: Install PHP 
-          command: yum install -y php php-curl php-mbstring php-mcrypt php-xml php-ldap php-cli php-common
+          command: yum install -y php php-curl php-xml php-ldap php-cli php-common php-mysql
       - run:
           name: Check PHP version
           command: php -v
