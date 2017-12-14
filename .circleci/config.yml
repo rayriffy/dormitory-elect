@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/dorm_elect
+    docker:
+      - image: debian:stretch
+    steps:
+      - run:
+          name: Update Container
+          command: apt-get update
+      - checkout
+      - run:
+          name: Install Packages
+          command: |
+            apt-get install -y nodejs
+            apt-get install -y npm
+            apt-get install -y ca-certificates
+      - run:
+          name: Install NPM modules
+          command: |
+            npm install syntax-checker -g
+            npm install uglifyjs -g
+      - run:
+          name: Test Files
+          command: syntax-checker ~/dorm_elect
+      - store_artifacts:
+          path: /root/dorm_elect
