@@ -3,23 +3,20 @@ jobs:
   build:
     working_directory: ~/dorm_elect
     docker:
-      - image: debian:stretch
+      - image: centos:centos7
     steps:
       - run:
           name: Update Container
-          command: apt-get update -y
+          command: yum update -y
       - run:
           name: Hotfix to container
-          command: apt-get install -y ca-certificates curl sudo gnupg gnupg2 gnupg1
+          command: yum install -y ca-certificates curl sudo
       - run:
           name: Install Required complier
-          command: apt-get install -y uglifyjs zip unzip git software-properties-common
+          command: yum install -y uglifyjs zip unzip git epel-release
       - run:
-          name: Install PHP 5.6
-          command: |
-            add-apt-repository ppa:ondrej/php -y
-            apt-get update && sudo apt-get -y upgrade 
-            apt-get install -y php5.6 php5.6-curl php5.6-mbstring php5.6-mcrypt php5.6-xml php5.6-ldap php5.6-cli php5.6-common
+          name: Install PHP 
+          command: yum install -y php php-curl php-mbstring php-mcrypt php-xml php-ldap php-cli php-common
       - run:
           name: Check PHP version
           command: php -v
