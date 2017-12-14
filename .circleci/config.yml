@@ -17,34 +17,13 @@ jobs:
           command: yum install -y ca-certificates curl sudo
       - run:
           name: Install Required complier
-          command: yum install -y uglifyjs zip unzip git epel-release wget tar gcc gcc+ make
+          command: yum install -y uglifyjs zip unzip git epel-release wget tar gcc gcc+ make nodejs
       - run:
           name: Install PHP 
           command: yum install -y php php-curl php-xml php-ldap php-cli php-common php-mysql
       - run:
           name: Check PHP version
           command: php -v
-      - run:
-          name: Download and extract NodeJS
-          command: |
-            mkdir ~/nodejs
-            cd ~/nodejs
-            wget http://nodejs.org/dist/v9.3.0/node-v9.3.0.tar.gz
-            tar xzvf node-v9.3.0.tar.gz
-      - run:
-          name: Make NodeJS
-          command: |
-            cd ~/nodejs/node-v9.3.0
-            pwd
-            ls -a
-            ./configure
-            make
-            make install
-      - run:
-          name: Check NodeJS version
-          command: |
-            node --version
-            cd ~/dorm_elect
       - run:
           name: Install composer
           command: |
