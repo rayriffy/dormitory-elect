@@ -43,7 +43,7 @@ jobs:
           name: Test Files
           command: |
             cd ~/phplint
-            ./vendor/bin/parallel-lint ~/dorm_elect
+            ./vendor/bin/parallel-lint ~/dorm_elect/*
       - store_artifacts:
           path: /root/dorm_elect
       - store_artifacts:

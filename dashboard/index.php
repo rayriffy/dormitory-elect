@@ -140,6 +140,7 @@
               <center><p class="flow-text"><? if($voted==1) { echo 'Voted! '; } ?>Please Wait</p></center>
               <?
                 }
+                mysql_close();
               ?>
             </div>
           </div>
@@ -153,6 +154,3 @@
   <script src="/js/init.js" async></script>
 </body>
 </html>
-<?
-  mysql_close();
-?>
