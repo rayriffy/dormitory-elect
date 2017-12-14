@@ -11,6 +11,9 @@ jobs:
       - run:
           name: Hotfix to container
           command: apt-get install -y ca-certificates curl sudo gnupg gnupg2 gnupg1
+      - run:
+          name: Install Required complier
+          command: apt-get install -y uglifyjs php
       - checkout
       - run:
           name: Install NodeJS
