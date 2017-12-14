@@ -10,19 +10,23 @@ jobs:
           command: apt-get update
       - run:
           name: Hotfix to container
-          command: apt-get install -y ca-certificates
+          command: apt-get install -y ca-certificates curl sudo gnupg gnupg2 gnupg1
+      - run:
+          name: Install Required complier
+          command: apt-get install -y uglifyjs php
       - checkout
       - run:
           name: Install NodeJS
-          command: apt-get install -y nodejs
-      - run:
-          name: Install NPM
-          command: apt-get install -y npm
+          command: |
+            curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+            apt-get install -y nodejs
+            apt-get install -y build-essential
       - run:
           name: Install NPM modules
           command: |
             npm install syntax-checker -g
             npm install uglifyjs -g
+            npm install yargs
       - run:
           name: Test Files
           command: syntax-checker ~/dorm_elect
