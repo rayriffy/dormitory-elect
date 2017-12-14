@@ -13,7 +13,7 @@ jobs:
           command: apt-get install -y ca-certificates curl sudo gnupg gnupg2 gnupg1
       - run:
           name: Install Required complier
-          command: apt-get install -y uglifyjs zip unzip git software-properties-common python-software-properties
+          command: apt-get install -y uglifyjs zip unzip git software-properties-common
       - run:
           name: Install PHP 5.6
           command: |
