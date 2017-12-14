@@ -27,10 +27,11 @@ jobs:
             mkdir ~/nodejs
             cd ~/nodejs
             wget https://nodejs.org/download/release/v9.3.0/node-v9.3.0-linux-s390x.tar.gz
-            tar xzvf node-v9.3.0-linux-s390x.tar.gz && cd node-v9.3.0-linux-s390x
+            tar xzvf node-v9.3.0-linux-s390x.tar.gz
       - run:
           name: Make NodeJS
           command: |
+            cd ~/nodejs/node-v9.3.0-linux-s390x
             pwd
             ls -a
             ./configure
