@@ -22,7 +22,7 @@ jobs:
             apt-get install -y nodejs
             apt-get install -y build-essential
       - run:
-          name: Install NodeJS
+          name: Install composer
           command: |
             php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
             php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
@@ -31,8 +31,8 @@ jobs:
       - run:
           name: composer
           command: |
-            composer require --dev jakub-onderka/php-parallel-lint
-            composer require --dev jakub-onderka/php-console-highlighter
+            php composer.phar require --dev jakub-onderka/php-parallel-lint
+            php composer.phar require --dev jakub-onderka/php-console-highlighter
       - run:
           name: Test
           command: ./bin/parallel-lint .
