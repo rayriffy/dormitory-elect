@@ -10,6 +10,9 @@ jobs:
           name: Update Container
           command: yum update -y
       - run:
+          name: Install Development Tools
+          command: yum groupinstall 'Development Tools'
+      - run:
           name: Hotfix to container
           command: yum install -y ca-certificates curl sudo
       - run:
