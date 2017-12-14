@@ -13,7 +13,7 @@ jobs:
           command: yum install -y ca-certificates curl sudo
       - run:
           name: Install Required complier
-          command: yum install -y uglifyjs zip unzip git epel-release
+          command: yum install -y uglifyjs zip unzip git epel-release wget tar gcc gcc+ make
       - run:
           name: Install PHP 
           command: yum install -y php php-curl php-mbstring php-mcrypt php-xml php-ldap php-cli php-common
@@ -22,11 +22,23 @@ jobs:
           command: php -v
       - checkout
       - run:
-          name: Install NodeJS
+          name: Download and extract NodeJS
           command: |
-            curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-            apt-get install -y nodejs
-            apt-get install -y build-essential
+            mkdir ~/nodejs
+            cd ~/nodejs
+            wget https://nodejs.org/download/release/v9.3.0/
+            tar xzvf node-v* && cd node-v*
+      - run:
+          name: Make NodeJS
+          command: |
+            ./configure
+            make
+            make install
+      - run:
+          name: Check NodeJS version
+          command: |
+            node --version
+            cd ~/dorm_elect
       - run:
           name: Install composer
           command: |
