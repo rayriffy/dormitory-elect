@@ -8,13 +8,16 @@ jobs:
       - run:
           name: Update Container
           command: apt-get update
+      - run:
+          name: Hotfix to container
+          command: apt-get install -y ca-certificates
       - checkout
       - run:
-          name: Install Packages
-          command: |
-            apt-get install -y nodejs
-            apt-get install -y npm
-            apt-get install -y ca-certificates
+          name: Install NodeJS
+          command: apt-get install -y nodejs
+      - run:
+          name: Install NPM
+          command: apt-get install -y npm
       - run:
           name: Install NPM modules
           command: |
