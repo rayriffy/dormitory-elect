@@ -31,6 +31,8 @@ jobs:
       - run:
           name: Make NodeJS
           command: |
+            pwd
+            ls -a
             ./configure
             make
             make install
