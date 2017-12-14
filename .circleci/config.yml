@@ -14,7 +14,10 @@ jobs:
       - checkout
       - run:
           name: Install NodeJS
-          command: apt-get install -y nodejs
+          command: |
+            curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+            sudo apt-get install nodejs
+            sudo apt-get install build-essential
       - run:
           name: Install NPM modules
           command: |
