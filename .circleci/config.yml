@@ -10,14 +10,14 @@ jobs:
           command: apt-get update
       - run:
           name: Hotfix to container
-          command: apt-get install -y ca-certificates curl gcc c++ sudo tar git g++ gnupg libstdc++ make mercurial paxctl python subversion
+          command: apt-get install -y ca-certificates curl
       - checkout
       - run:
           name: Install NodeJS
           command: |
             curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-            sudo apt-get install nodejs
-            sudo apt-get install build-essential
+            apt-get install nodejs
+            apt-get install build-essential
       - run:
           name: Install NPM modules
           command: |
