@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: centos:centos6.9
     steps:
+      - checkout
       - run:
           name: Update Container
           command: yum update -y
@@ -20,7 +21,6 @@ jobs:
       - run:
           name: Check PHP version
           command: php -v
-      - checkout
       - run:
           name: Download and extract NodeJS
           command: |
