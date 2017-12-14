@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/dorm_elect
     docker:
-      - image: centos:centos7.4.1708
+      - image: centos:centos6.9
     steps:
       - run:
           name: Update Container
