@@ -34,10 +34,16 @@ jobs:
       - run:
           name: composer
           command: |
+            mkdir ~/phplint
+            cd ~/phplint
             php composer.phar require --dev jakub-onderka/php-parallel-lint
             php composer.phar require --dev jakub-onderka/php-console-highlighter
       - run:
           name: Test Files
-          command: ./vendor/bin/parallel-lint .
+          command: |
+            cd ~/phplint
+            ./vendor/bin/parallel-lint ~/dorm_elect
       - store_artifacts:
           path: /root/dorm_elect
+      - store_artifacts:
+          path: /root/phplint
