@@ -4,4 +4,4 @@ machine:
     version: 5.6.18
 test:
   pre:
-    - ./check_syntax.sh
+    - sudo ./check_syntax.sh
