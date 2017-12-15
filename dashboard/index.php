@@ -142,7 +142,6 @@
                 }
                 mysql_close();
                 date_default_timezone_set("Asia/Bangkok");
-                }
               ?>
             </div>
           </div>
@@ -156,3 +155,4 @@
   <script src="/js/init.js" async></script>
 </body>
 </html>
+<?  } ?>
