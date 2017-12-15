@@ -155,4 +155,4 @@
   <script src="/js/init.js" async></script>
 </body>
 </html>
-<?  } ?>
+<?php } ?>
