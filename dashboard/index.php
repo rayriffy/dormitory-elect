@@ -142,17 +142,17 @@
                 }
                 mysql_close();
                 date_default_timezone_set("Asia/Bangkok");
+                }
               ?>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <center class="white-text">© <? if(date("Y")>2017){ echo '2017-'; } echo date("Y"); ?> RiffyTech Corporation</center>
+    <center class="white-text">© <? if(date("Y")>2017){ echo '2017-'; } echo date("Y"); ?> RiffyTech Corporation | <a href="https://github.com/rayriffy/dormitory-elect">GitHub</a></center>
   </div>
 
   <script src="/js/materialize.js"></script>
   <script src="/js/init.js" async></script>
 </body>
 </html>
-<?php } ?>
