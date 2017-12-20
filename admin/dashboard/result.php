@@ -1,13 +1,35 @@
+<?php
+  if(!isset($_COOKIE['admin_session_id']) || !isset($_COOKIE['admin_login_stat']) || $_COOKIE['admin_login_stat']!=300)
+  {
+    header('Location: /');
+  }
+  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
+  mysql_select_db('dormelec');
+  mysql_query("SET NAMES UTF8");
+  mysql_query("SET character_set_results=utf8");
+  mysql_query("SET character_set_client=utf8");
+  mysql_query("SET character_set_connection=utf8");
+
+  $table_id=$_REQUEST['id'];
+
+  /*$sql="SELECT * FROM `system` WHERE 1";
+  $query=mysql_query($sql);
+  while($row=mysql_fetch_array($query))
+  {
+    $is_open=$row[0];
+    $open_table_id=$row[1];
+  } */
+?>
 <!DOCTYPE html>
 <script src="/js/jquery.min.js"></script>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Dormitory Elec</title>
   <noscript>
-    <META HTTP-EQUIV="Refresh" CONTENT="0;URL=js_err.html">
+    <META HTTP-EQUIV="Refresh" CONTENT="0;URL=/js_err.html">
   </noscript>
 
   <!-- CSS -->
@@ -44,7 +66,6 @@
   <link rel="icon" type="image/png" href="/img/ico/favicon-128.png" sizes="128x128" />
 
   <!-- PWA Standard -->
-  <script src="/js/companion.js" data-service-worker="/sw.js"></script>
   <link rel="icon" type="image/png" href="/img/ico.png">
   <link rel="manifest" href="/manifest.json">
 </head>
@@ -66,44 +87,52 @@
   })
 </script>
 
-<body class="blue darken-2">
-  <div class="container" id="centering">
-    <div class="row">
-      <div class="col l4 offset-l4 s10 offset-s1">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">Login</span>
-            <div class="row">
-              <form action="login.php" method="post">
-                <?php
-                  if(isset($_COOKIE['login_stat']))
-                  {
-                    if($_COOKIE['login_stat']==700) {
-                ?>
-                <div class="chip red lighten-1 white-text col s12">
-                  <center>Invalid username/password :-(
-                  <i class="close material-icons">close</i></center>
-                </div>
-                <?php
-                    }
-                    setcookie('login_stat',700,time()-7200);
-                  }
-                ?>
-                <div class="input-field col s12">
-                  <input id="token_mo" type="password" name="token" class="validate" required>
-                  <label for="token_mo">Token</label>
-                </div>
-                <button class="btn waves-effect waves-light blue col s12" type="submit">LOGIN</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <center class="white-text">© <? date_default_timezone_set("Asia/Bangkok"); if(date("Y")>2017){ echo '2017-'; } echo date("Y"); ?> RiffyTech Corporation | <a href="https://github.com/rayriffy/dormitory-elect">GitHub</a></center>
-  </div>
+<body>
+  <canvas id="chart" width="100%" height="100%"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+  <script>
+    var data = {
+      datasets: [{
+        data: [<?
+            $sql="SELECT `score` FROM `".$table_id."` WHERE 1";
+            $query=mysql_query($sql);
+            $i=0;
+            while($row=mysql_fetch_array($query))
+            {
+              if($i!=0)
+                echo ",";
+              echo $row[0];
+              $i++;
+            }
+          ?>],
+        backgroundColor:["#e53935","#d81b60","#8e24aa","#5e35b1","#3949ab","#1e88e5","#039be5","#00acc1","#00897b","#43a047","#7cb342","#c0ca33","#fdd835","#ffb300","#fb8c00","#f4511e","#6d4c41"]
+      }],
+
+      // These labels appear in the legend and in the tooltips when hovering different arcs
+      labels: [<?
+          $sql="SELECT `name` FROM `".$table_id."` WHERE 1";
+          $query=mysql_query($sql);
+          $i=0;
+          while($row=mysql_fetch_array($query))
+          {
+            if($i!=0)
+              echo ",";
+            echo "'".$row[0]."'";
+            $i++;
+          }
+        ?>],
+    };
+    var ctx = document.getElementById("chart");
+    var chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: data
+    });
+  </script>
 
   <script src="/js/materialize.js"></script>
   <script src="/js/init.js" async></script>
 </body>
+<?
+  mysql_close();
+?>
 </html>
