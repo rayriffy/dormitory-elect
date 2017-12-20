@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/rayriffy/dormitory-elect.svg?style=svg)](https://circleci.com/gh/rayriffy/dormitory-elect)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/designed-in-ms-paint.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/validated-html5.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
 # Dormitory Election
 MWITS DSC Election System
