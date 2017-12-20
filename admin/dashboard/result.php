@@ -3,12 +3,8 @@
   {
     header('Location: /');
   }
-  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
-  mysql_select_db('dormelec');
-  mysql_query("SET NAMES UTF8");
-  mysql_query("SET character_set_results=utf8");
-  mysql_query("SET character_set_client=utf8");
-  mysql_query("SET character_set_connection=utf8");
+
+  require_once '/config.php';
 
   $table_id=$_REQUEST['id'];
 
@@ -105,7 +101,7 @@
               $i++;
             }
           ?>],
-        backgroundColor:["#e53935","#d81b60","#8e24aa","#5e35b1","#3949ab","#1e88e5","#039be5","#00acc1","#00897b","#43a047","#7cb342","#c0ca33","#fdd835","#ffb300","#fb8c00","#f4511e","#6d4c41"]
+        backgroundColor:["#00acc1","#1e88e5","#7cb342","#43a047","#039be5","#00897b","#c0ca33","#6d4c41","#3949ab","#e53935","#d81b60","#fb8c00","#5e35b1","#f4511e","#fdd835","#ffb300","#8e24aa"]
       }],
 
       // These labels appear in the legend and in the tooltips when hovering different arcs

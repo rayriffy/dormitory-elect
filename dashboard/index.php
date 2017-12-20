@@ -3,12 +3,7 @@
   {
     header('Location: /');
   }
-  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
-  mysql_select_db('dormelec');
-  mysql_query("SET NAMES UTF8");
-  mysql_query("SET character_set_results=utf8");
-  mysql_query("SET character_set_client=utf8");
-  mysql_query("SET character_set_connection=utf8");
+  require_once '/config.php';
 
 
   $sql="SELECT * FROM `system` WHERE 1";

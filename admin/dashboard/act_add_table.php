@@ -7,12 +7,7 @@
   $table_name=$_REQUEST['table_name'];
   $new_id=$_REQUEST['new_id'];
 
-  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
-  mysql_select_db('dormelec');
-  mysql_query("SET NAMES UTF8");
-  mysql_query("SET character_set_results=utf8");
-  mysql_query("SET character_set_client=utf8");
-  mysql_query("SET character_set_connection=utf8");
+  require_once '/config.php';
 
   $sql="CREATE TABLE `".$new_id."` (`name` text COLLATE utf8_unicode_ci NOT NULL,`student_id` varchar(5) COLLATE utf8_unicode_ci NOT NULL,`score` int(255) NOT NULL DEFAULT '0') ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
   $query=mysql_query($sql);
