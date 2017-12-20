@@ -105,7 +105,7 @@
               $i++;
             }
           ?>],
-        backgroundColor:["#e53935","#d81b60","#8e24aa","#5e35b1","#3949ab","#1e88e5","#039be5","#00acc1","#00897b","#43a047","#7cb342","#c0ca33","#fdd835","#ffb300","#fb8c00","#f4511e","#6d4c41"]
+        backgroundColor:["#00acc1","#1e88e5","#7cb342","#43a047","#039be5","#00897b","#c0ca33","#6d4c41","#3949ab","#e53935","#d81b60","#fb8c00","#5e35b1","#f4511e","#fdd835","#ffb300","#8e24aa"]
       }],
 
       // These labels appear in the legend and in the tooltips when hovering different arcs
