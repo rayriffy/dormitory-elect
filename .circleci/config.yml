@@ -19,7 +19,7 @@ jobs:
           name: Install Required complier
           command: yum install -y uglifyjs zip unzip git epel-release wget tar gcc gcc+ make nodejs
       - run:
-          name: Install PHP 
+          name: Install PHP
           command: yum install -y php php-curl php-xml php-ldap php-cli php-common php-mysql
       - run:
           name: Check PHP version
@@ -48,3 +48,34 @@ jobs:
           path: /root/dorm_elect
       - store_artifacts:
           path: /root/phplint
+  deploy:
+    working_directory: ~/dorm_elect
+    docker:
+      - image: centos:centos7
+    steps:
+      - checkout
+      - run:
+          name: Update Container
+          command: yum update -y
+      - run:
+          name: Install Development Tools
+          command: yum groupinstall -y 'Development Tools'
+      - run:
+          name: Hotfix to container
+          command: yum install -y ca-certificates curl sudo
+      - run:
+          name: Install Required Packages
+          command: yum install -y wget git epel-release
+      - store_artifacts:
+          path: /root/dorm_elect
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

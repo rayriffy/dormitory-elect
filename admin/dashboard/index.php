@@ -136,6 +136,7 @@
                           <th>ID</th>
                           <th>Name</th>
                           <th></th>
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -149,6 +150,7 @@
                           <td><? echo $row[0]; ?></td>
                           <td><a href="edit/?id=<? echo $row[0]; ?>"><? echo $row[1]; ?></a></td>
                           <td><? if($open_table_id==$row[0]){ ?><button class="btn blue waves-effect waves-light disabled">SELECTED</button><? } else { ?><a class="btn blue waves-effect waves-light" href="table_controller.php?id=<? echo $row[0]; ?>">SELECT</a><? } ?></td>
+                          <td><a href="javascript:window.open('result.php?id=<? echo $row[0]; ?>','viewscore','width=800,height=800')"><i class="material-icons">info_outline</i></a></td>
                         </tr>
                         <?
                           }
