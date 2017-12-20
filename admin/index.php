@@ -76,9 +76,9 @@
             <div class="row">
               <form action="login.php" method="post">
                 <?php
-                  if(isset($_COOKIE['login_stat']))
+                  if(isset($_COOKIE['admin_login_stat']))
                   {
-                    if($_COOKIE['login_stat']==700) {
+                    if($_COOKIE['admin_login_stat']==700) {
                 ?>
                 <div class="chip red lighten-1 white-text col s12">
                   <center>Invalid username/password :-(
@@ -86,7 +86,7 @@
                 </div>
                 <?php
                     }
-                    setcookie('login_stat',700,time()-7200);
+                    setcookie('admin_login_stat',700,time()-7200);
                   }
                 ?>
                 <div class="input-field col s12">
