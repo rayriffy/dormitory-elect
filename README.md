@@ -12,9 +12,9 @@ MWITS DSC Election System
 
  First of all, install LEMP stack to your server. I recommended to use `nginx` [Installing Guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04)
 
-Then, import orchid MySQL database to your MySQL server
+Then, import MySQL database to your MySQL server
 
-Finally, ~~edit configuration~~ configuration file is on the way! Stay tuned
+Finally, ~~edit configuration~~ configuration file is on the way! Stay tuned (For now just edit all mysql function in php file)
 
 
 ## Progressive Web App
