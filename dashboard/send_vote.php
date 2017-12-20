@@ -11,8 +11,7 @@
   $vote_table=(int)$_REQUEST['table_id'];
   $recived_vote=(string)$_REQUEST['vote'];
 
-  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
-  mysql_select_db('dormelec');
+  require_once '/config.php';
 
   // CHECK IS THIS TABLE ACTIVE
   $sql="SELECT * FROM `system` WHERE 1";

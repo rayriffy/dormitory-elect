@@ -1,7 +1,6 @@
 <?php
   // CONNECT TO SQL
-  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
-  mysql_select_db('dormelec');
+  require_once '/config.php';
   $sql="SELECT * FROM `user_admin` WHERE `token` LIKE '".$_REQUEST['token']."';";
   $query=mysql_query($sql);
   while($row=mysql_fetch_array($query))

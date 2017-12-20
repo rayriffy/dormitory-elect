@@ -7,12 +7,7 @@
   $table_id=$_REQUEST['table_id'];
   $del_stu_id=$_REQUEST['student_id'];
 
-  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
-  mysql_select_db('dormelec');
-  mysql_query("SET NAMES UTF8");
-  mysql_query("SET character_set_results=utf8");
-  mysql_query("SET character_set_client=utf8");
-  mysql_query("SET character_set_connection=utf8");
+  require_once '/config.php';
 
   $sql="DELETE FROM `".$table_id."` WHERE `student_id` LIKE '".$del_stu_id."'";
   $query=mysql_query($sql);

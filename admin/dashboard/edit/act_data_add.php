@@ -8,12 +8,7 @@
   $add_name=$_REQUEST['input_name'];
   $add_stu_id=$_REQUEST['student_id'];
 
-  $conn=mysql_connect('localhost','dormelec','THBN0Bu86JRoJT8T') or die('ERR:Could not connect to MySQL');
-  mysql_select_db('dormelec');
-  mysql_query("SET NAMES UTF8");
-  mysql_query("SET character_set_results=utf8");
-  mysql_query("SET character_set_client=utf8");
-  mysql_query("SET character_set_connection=utf8");
+  require_once '/config.php';
 
   $sql="INSERT INTO `".$table_id."`(`name`, `student_id`, `score`) VALUES ('".$add_name."','".$add_stu_id."',0)";
   $query=mysql_query($sql);
