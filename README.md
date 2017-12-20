@@ -7,14 +7,15 @@ MWITS DSC Election System
  - PHP 5.6 or later (newer than PHP 7.0 not compatible)
  - Latest version of MariaDB
  - Sites must be served in HTTPS [Get SSL certificate from here](https://letsencrypt.org/)
+ - This site must be on domain root `/`
 
 ## Installing
 
  First of all, install LEMP stack to your server. I recommended to use `nginx` [Installing Guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04)
 
-Then, import MySQL database to your MySQL server
+Then, import pre setup MySQL database to your MySQL server
 
-Finally, ~~edit configuration~~ configuration file is on the way! Stay tuned (For now just edit all mysql function in php file)
+Finally, edit MySQL connection on `/config.php` 
 
 
 ## Progressive Web App
