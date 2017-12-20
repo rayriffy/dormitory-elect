@@ -31,7 +31,7 @@ In short, it can bring all that stuff to your web application and deliver all ex
 
 ![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/chrome/chrome_512x512.png) | ![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/firefox/firefox_512x512.png) | ![Opera](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/opera/opera_512x512.png) | ![Samsung Internet](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/samsung-internet/samsung-internet_512x512.png) | ![Edge](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/edge/edge_512x512.png) | ![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/safari/safari_512x512.png) | ![Internet Explorer](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/archive/internet-explorer-tile_10-11/internet-explorer-tile_10-11_512x512.png)
 ---|---|---|---|---|---|---
-45+|44+|32+|Based on Chromium 44.2403+|Limited function and performance|Limited function and performance|Go away REEEEEE
+45+|44+|32+|Based on Chromium 44.2403+|17+|Limited function and performance|Go away REEEEEE
 
 ## Troubleshooting
 
