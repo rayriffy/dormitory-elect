@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/rayriffy/dormitory-elect.svg?style=svg)](https://circleci.com/gh/rayriffy/dormitory-elect)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/designed-in-ms-paint.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/validated-html5.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
 # Dormitory Election
 MWITS DSC Election System
@@ -7,14 +7,15 @@ MWITS DSC Election System
  - PHP 5.6 or later (newer than PHP 7.0 not compatible)
  - Latest version of MariaDB
  - Sites must be served in HTTPS [Get SSL certificate from here](https://letsencrypt.org/)
+ - This site must be on domain root `/`
 
 ## Installing
 
  First of all, install LEMP stack to your server. I recommended to use `nginx` [Installing Guide](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04)
 
-Then, import orchid MySQL database to your MySQL server
+Then, import pre setup MySQL database to your MySQL server
 
-Finally, ~~edit configuration~~ configuration file is on the way! Stay tuned
+Finally, edit MySQL connection on `/config.php` 
 
 
 ## Progressive Web App
@@ -31,7 +32,7 @@ In short, it can bring all that stuff to your web application and deliver all ex
 
 ![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/chrome/chrome_512x512.png) | ![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/firefox/firefox_512x512.png) | ![Opera](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/opera/opera_512x512.png) | ![Samsung Internet](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/samsung-internet/samsung-internet_512x512.png) | ![Edge](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/edge/edge_512x512.png) | ![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/safari/safari_512x512.png) | ![Internet Explorer](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/43.1.0/archive/internet-explorer-tile_10-11/internet-explorer-tile_10-11_512x512.png)
 ---|---|---|---|---|---|---
-45+|44+|32+|Based on Chromium 44.2403+|Limited function and performance|Limited function and performance|Go away REEEEEE
+45+|44+|32+|Based on Chromium 44.2403+|17+|Limited function and performance|Go away REEEEEE
 
 ## Troubleshooting
 
