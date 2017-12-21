@@ -6,6 +6,11 @@
 
   require_once '/config.php';
 
+  if(!isset($_REQUEST['id']))
+  {
+    die("ERR: Invalid request! <a href='../'>Back</a>");
+  }
+
   $table_id=$_REQUEST['id'];
 ?>
 <!DOCTYPE html>
