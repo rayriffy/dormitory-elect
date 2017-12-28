@@ -3,7 +3,7 @@
   {
     header('Location: /');
   }
-  require_once '/config.php';
+  require_once '../config.php';
 
 
   $sql="SELECT * FROM `system` WHERE 1";

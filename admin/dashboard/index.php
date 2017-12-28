@@ -4,7 +4,7 @@
     header('Location: /');
   }
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   $sql="SELECT * FROM `table_data` WHERE 1";
   $query=mysql_query($sql);

@@ -1,6 +1,6 @@
 <?php
   // CONNECT TO SQL
-  require_once '/config.php';
+  require_once '../config.php';
   $sql="SELECT * FROM `user_admin` WHERE `token` LIKE '".$_REQUEST['token']."';";
   $query=mysql_query($sql);
   while($row=mysql_fetch_array($query))

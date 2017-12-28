@@ -6,7 +6,7 @@
 
   $table_id=$_REQUEST['table_id'];
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   $sql="TRUNCATE `".$table_id."`";
   $query=mysql_query($sql);

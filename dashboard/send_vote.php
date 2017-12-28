@@ -11,7 +11,7 @@
   $vote_table=(int)$_REQUEST['table_id'];
   $recived_vote=(string)$_REQUEST['vote'];
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   // CHECK IS THIS TABLE ACTIVE
   $sql="SELECT * FROM `system` WHERE 1";

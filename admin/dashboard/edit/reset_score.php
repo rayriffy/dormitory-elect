@@ -6,7 +6,7 @@
 
   $table_id=$_REQUEST['table_id'];
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   $sql="UPDATE `".$table_id."` SET `score`=0 WHERE 1";
   $query=mysql_query($sql);

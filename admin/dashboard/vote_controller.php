@@ -10,7 +10,7 @@
   else if($command=="close")
     $stat=0;
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   if($stat==1)
   {
