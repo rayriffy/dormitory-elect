@@ -1,7 +1,7 @@
 <?
   $hostname='localhost';
-  $username='#USER#';
-  $password='#PASS#';
+  $username='dormelec';
+  $password='3eRFxvXaKK0TLsn3aw5N';
   $dbname='dormelec';
 
   mysql_connect($hostname, $username, $password) OR DIE('Unable to connect to database! Please try again later.');

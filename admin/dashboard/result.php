@@ -4,7 +4,7 @@
     header('Location: /');
   }
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   $table_id=$_REQUEST['id'];
 

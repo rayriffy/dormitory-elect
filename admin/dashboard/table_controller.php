@@ -6,7 +6,7 @@
 
   $id=$_REQUEST['id'];
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   $sql="UPDATE `system` SET `open_table_id`=".$id." WHERE 1";
   $query=mysql_query($sql);

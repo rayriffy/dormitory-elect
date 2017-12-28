@@ -7,7 +7,7 @@
   $table_id=$_REQUEST['table_id'];
   $del_stu_id=$_REQUEST['student_id'];
 
-  require_once '/config.php';
+  require_once '../config.php';
 
   $sql="DELETE FROM `".$table_id."` WHERE `student_id` LIKE '".$del_stu_id."'";
   $query=mysql_query($sql);
