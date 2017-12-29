@@ -4,7 +4,7 @@
     header('Location: /');
   }
 
-  require_once '../config.php';
+  require_once '../../config.php';
 
   if(!isset($_REQUEST['id']))
   {
@@ -220,7 +220,7 @@
         </div>
       </div>
     </div>
-    <center class="black-text">© <? if(date("Y")>2017){ echo '2017-'; } echo date("Y"); ?> RiffyTech Corporation | <a href="https://github.com/rayriffy/dormitory-elect">GitHub</a></center>
+    <center class="black-text">© <? if(date("Y")>2017){ echo '2017-'; } echo date("Y"); ?> <a href="https://facebook.com/rayriffy">Phumrapee Limpianchop</a> | <a href="https://github.com/rayriffy/dormitory-elect">GitHub</a></center>
   </div>
 
   <script src="/js/materialize.js"></script>

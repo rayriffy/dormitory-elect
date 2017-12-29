@@ -8,7 +8,7 @@
   $add_name=$_REQUEST['input_name'];
   $add_stu_id=$_REQUEST['student_id'];
 
-  require_once '../config.php';
+  require_once '../../config.php';
 
   $sql="INSERT INTO `".$table_id."`(`name`, `student_id`, `score`) VALUES ('".$add_name."','".$add_stu_id."',0)";
   $query=mysql_query($sql);

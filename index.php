@@ -100,10 +100,18 @@
         </div>
       </div>
     </div>
-    <center class="white-text">© <? date_default_timezone_set("Asia/Bangkok"); if(date("Y")>2017){ echo '2017-'; } echo date("Y"); ?> RiffyTech Corporation | <a href="https://github.com/rayriffy/dormitory-elect">GitHub</a></center>
+    <center class="white-text">© <? date_default_timezone_set("Asia/Bangkok"); if(date("Y")>2017){ echo '2017-'; } echo date("Y"); ?> <a class="white-text" href="https://facebook.com/rayriffy">Phumrapee Limpianchop</a> | <a class="white-text" href="https://github.com/rayriffy/dormitory-elect">GitHub</a></center>
   </div>
 
   <script src="/js/materialize.js"></script>
   <script src="/js/init.js" async></script>
+  <!-- Service Worker -->
+  <script type="text/javascript">
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+  </script>
 </body>
 </html>
