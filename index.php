@@ -78,7 +78,7 @@
                 <?php
                   if(isset($_COOKIE['login_stat']))
                   {
-                    if($_COOKIE['login_stat']==700) {
+                    if($_COOKIE['login_stat']==7700) {
                 ?>
                 <div class="chip red lighten-1 white-text col s12">
                   <center>Invalid username/password :-(
